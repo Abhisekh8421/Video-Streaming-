@@ -43,7 +43,15 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/uploads", express.static("uploads"), (req, res) => {
+app.use("/uploads", express.static("uploads"));
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "hello everyone",
+  });
+});
+
+app.post("/upload", upload.single("file"), (req, res) => {
   const lessonId = uuidv4();
   const videoPath = req.file.path;
   const outputPath = `./uploads/videos/${lessonId}`;
@@ -66,14 +74,6 @@ app.use("/uploads", express.static("uploads"), (req, res) => {
     });
   });
 });
-
-app.get("/", (req, res) => {
-  res.json({
-    message: "hello everyone",
-  });
-});
-
-app.post("/upload", upload.single("file"));
 
 app.listen(8000, () => {
   console.log("Server Started");
