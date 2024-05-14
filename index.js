@@ -55,7 +55,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
   const lessonId = uuidv4();
   const videoPath = req.file.path;
   const outputPath = `./uploads/videos/${lessonId}`;
-  const hls = `${outputPath}/index.m3u8`;
+  const hlsPath = `${outputPath}/index.m3u8`;
   if (!fs.existsSync(outputPath)) {
     fs.mkdirSync(outputPath, { recursive: true });
   }
