@@ -5,7 +5,8 @@ import VideoPlayer from "./VideoPlayer";
 function App() {
   const playerRef = useRef(null);
   const videoUrl =
-    "http://localhost:8000/uploads/courses/c8982f43-5d4f-4909-9341-a2546a215407/index.m3u8";
+    "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8";
+
   const videoPlayerOptions = {
     controls: true,
     responsive: true,
@@ -32,7 +33,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Video player</h1>
+        <h1>Video streaming Platform </h1>
       </div>
       <VideoPlayer options={videoPlayerOptions} onReady={handlePlayerReady} />
     </>
