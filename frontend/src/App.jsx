@@ -5,7 +5,7 @@ import VideoPlayer from "./VideoPlayer";
 function App() {
   const playerRef = useRef(null);
   const videoUrl =
-    "http://localhost:8000/uploads/videos/68cdd021-8c3d-4e57-be04-8ca00700e589/index.m3u8";
+    "http://localhost:8000/uploads/courses/c8982f43-5d4f-4909-9341-a2546a215407/index.m3u8";
   const videoPlayerOptions = {
     controls: true,
     responsive: true,
